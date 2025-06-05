@@ -102,3 +102,43 @@ spec:
 Supprimer les pods des exercices d'avant, déployez un nouveau pod nginx avec l'image ```harbor.kakor.ovh/public/nginx:latest```.
 
 Créez un service associé à ce pod, en vous connectant dans le pod avec la commande ``` oc exec -it <monpod> -- /bin/bash ``` testez que le service fonctionne bien. 
+
+### Correction
+
+oc apply -f exo2/podservice.yaml
+
+oc rsh nginx (équivalent à oc exec -it...) 
+
+curl localhost # résultat du pod 
+curl nginx # résultat du service
+
+## Demo 2 Création d'un Ingress
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  rules:
+    - host: nginx-correction.apps.openshift.kakor.ovh
+      http:
+        paths:
+        - path: ''
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: nginx
+              port:
+                number: 80
+  tls:
+  - {}
+```
+
+## Exercice 3
+
+A partir des éléments de l'exercice 2, créez l'ingress vous permettant d'accéder depuis l'extérieur à votre pod nginx. 
+
+Attention à ce que le nom de l'host soit singulier dans le cluster Openshift. 
+
+(ex: monnginx-001.apps.openshift.kakor.ovh )
