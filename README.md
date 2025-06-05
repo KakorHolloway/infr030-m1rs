@@ -152,3 +152,14 @@ Récupérez le nom du fichier (/usr/share/nginx/html/index.html)
 
 Modifiez le via :
 ```echo "texte" > /usr/share/nginx/html/index.html```
+
+Créez un fichier configmap index.html :
+https://kubernetes.io/docs/concepts/configuration/configmap/
+
+Suivant la documentation, montez le fichier index.html de la cm dans le pod nginx. 
+
+Vérifiez que cette modification fonctionne. 
+
+Pour plus simplement créer la configmap, vous pouvez utiliser la commande :
+
+``` oc create configmap --from-file=index.html ```
