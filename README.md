@@ -42,3 +42,23 @@ Ajoutez la section suivante dans la section container (au même niveau que image
 securityContext:
   allowPrivilegeEscalation: true
 ```
+
+### Correction
+
+```
+oc apply -f exo1/podexo1.yaml
+```
+
+Vous pouvez vous connecter dans le pod avec :
+
+```
+oc exec -it httpd -- /bin/bash
+ou 
+oc rsh httpd
+```
+
+Lancez les commandes :
+```
+apt-get update && apt-get install curl 
+curl localhost
+```
