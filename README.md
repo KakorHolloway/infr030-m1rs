@@ -32,7 +32,7 @@ Pour vérifier que vous êtes authentifiés, lancez la commande ```oc get pod```
 
 ## Exercice 1
 
-Dans votre namespace, créez un pod avec l'image docker pull harbor.kakor.ovh/public/httpd:latest en vous basant sur la documentation suivante :
+Dans votre namespace, créez un pod avec l'image docker pull ``` harbor.kakor.ovh/public/httpd:latest ``` en vous basant sur la documentation suivante :
 https://kubernetes.io/docs/concepts/workloads/pods/
 
 Avec la commande oc get pod, vérifiez que votre fonctionne bien. 
