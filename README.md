@@ -37,7 +37,7 @@ https://kubernetes.io/docs/concepts/workloads/pods/
 
 Avec la commande oc get pod, vérifiez que votre fonctionne bien. 
 
-Ajoutez la section suivante dans la section container :
+Ajoutez la section suivante dans la section container (au même niveau que image par exemple):
 ```
 securityContext:
   allowPrivilegeEscalation: true
