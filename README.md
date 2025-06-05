@@ -163,3 +163,11 @@ Vérifiez que cette modification fonctionne.
 Pour plus simplement créer la configmap, vous pouvez utiliser la commande :
 
 ``` oc create configmap maconfigmap --from-file=index.html ```
+
+### Correction
+
+oc create configmap --from-file=canard.png --from-file=index.html canard-website --dry-run=client -o yaml > cm.yaml
+
+oc create -f .\cm.yaml
+
+oc apply -f podcm.yaml
