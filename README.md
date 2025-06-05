@@ -142,3 +142,7 @@ A partir des éléments de l'exercice 2, créez l'ingress vous permettant d'acc�
 Attention à ce que le nom de l'host soit singulier dans le cluster Openshift. 
 
 (ex: monnginx-001.apps.openshift.kakor.ovh )
+
+## Exercice 4 
+
+Praparation : Sans rien toucher de l'exo 3, modifiez la page web hébergée par votre conteneur. 
