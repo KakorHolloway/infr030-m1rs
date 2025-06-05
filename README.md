@@ -162,4 +162,4 @@ Vérifiez que cette modification fonctionne.
 
 Pour plus simplement créer la configmap, vous pouvez utiliser la commande :
 
-``` oc create configmap --from-file=index.html ```
+``` oc create configmap maconfigmap --from-file=index.html ```
