@@ -29,3 +29,10 @@ Une fois authentifié (attention à ne pas recharger la page même si l'affichag
 Cliquez sur le lien Display Token et copiez dans votre terminal sur VScode la ligne de commande qui à été donné avec oc. 
 
 Pour vérifier que vous êtes authentifiés, lancez la commande ```oc get pod```
+
+## Exercice 1
+
+Dans votre namespace, créez un pod avec l'image httpd en vous basant sur la documentation suivante :
+https://kubernetes.io/docs/concepts/workloads/pods/
+
+Avec la commande oc get pod, vérifiez que votre fonctionne bien. 
