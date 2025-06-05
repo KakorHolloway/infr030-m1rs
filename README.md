@@ -36,3 +36,9 @@ Dans votre namespace, créez un pod avec l'image httpd en vous basant sur la doc
 https://kubernetes.io/docs/concepts/workloads/pods/
 
 Avec la commande oc get pod, vérifiez que votre fonctionne bien. 
+
+Ajoutez la section suivante dans la section container :
+```
+securityContext:
+  allowPrivilegeEscalation: true
+```
