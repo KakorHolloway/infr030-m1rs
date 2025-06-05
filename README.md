@@ -62,3 +62,43 @@ Lancez les commandes :
 apt-get update && apt-get install curl 
 curl localhost
 ```
+
+## Demo 1 : les services
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+  labels:
+    demo: httpd
+spec:
+  containers:
+  - name: httpd
+    image: harbor.kakor.ovh/public/httpd:latest
+    securityContext:
+      allowPrivilegeEscalation: true
+    ports:
+    - containerPort: 80
+```
+
+Service :
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpd
+spec:
+  selector:
+    demo: httpd
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+```
+## Exercice 2
+
+Supprimer les pods des exercices d'avant, déployez un nouveau pod nginx avec l'image ```harbor.kakor.ovh/public/nginx:latest```.
+
+Créez un service associé à ce pod, en vous connectant dans le pod avec la commande ``` oc exec -it <monpod> -- /bin/bash ``` testez que le service fonctionne bien. 
