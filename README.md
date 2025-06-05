@@ -146,3 +146,9 @@ Attention à ce que le nom de l'host soit singulier dans le cluster Openshift.
 ## Exercice 4 
 
 Praparation : Sans rien toucher de l'exo 3, modifiez la page web hébergée par votre conteneur. 
+
+Pour se faire, allez dans le fichier /etc/nginx/conf.d/default.conf en vous connectant dans le pod via ```oc exec -it nginx -- /bin/bash```
+Récupérez le nom du fichier (/usr/share/nginx/html/index.html)
+
+Modifiez le via :
+```echo "texte" > /usr/share/nginx/html/index.html```
