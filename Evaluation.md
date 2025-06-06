@@ -21,5 +21,6 @@ Dans un zip, en rendu donnez-moi :
 - Un schéma sur draw.io des composants installés
 - Les fichiers yaml des composants installés sur Kubernetes (attention à la copie...)
 - Un README.md donnant le nom des participants et une description des différents objets créés (par ex: on a un secret nommé michel qui permet de créer une variable d'environnement sur le conteneur x... En cas d'objet utilisés qui n'ont pas été vu en cours, justifiez en partant de la doc leurs utilisation. )
+- Une capture d'écran de GLPI configuré
 
 - Que pourrions nous faire pour améliorer le déploiement ? 
