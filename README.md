@@ -183,3 +183,12 @@ L'appel de la variable d'environnement se fait depuis le pod :
               key: demo
 ```
 Ce qui laisse entendre que nous avons une configmap nommée env-demo et on récupère la valeur uniquement de la clé demo. 
+
+## Exercice 5 : Mise en place d'un secret comme variable d'environnement :
+https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables
+
+Créez un secret qui va contenir un mot de passe pour une base de donnée 
+
+Créez un pod avec pull harbor.kakor.ovh/public/mariadb:latest qui va monter ce secret dans la bonne variable d'environnement. 
+
+Vérifiez que votre pod est bien en running et que le mot de passe fonctionne en vous connectant sur le pod et sur la db via la commande mariadb. 
