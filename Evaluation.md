@@ -8,8 +8,8 @@ Afin de mettre ces outils en place voici ce qu'il va vous falloir créer :
 
 Deux deployment d'un replica chacun. 
 Un secret pour stocker le ou les mots de passe
-Un deployment aura l'image harbor.kakor.ovh/public/glpi:latest 
-L'autre sera une base de donnée mariadb avec l'image harbor.kakor.ovh/public/mariadb:latest
+Un deployment aura l'image harbor.kakor.ovh/public/glpi:latest (elestio/glpi hors harbor)
+L'autre sera une base de donnée mariadb avec l'image harbor.kakor.ovh/public/mariadb:latest (mariadb hors harbor)
 Pour contacter le pod mariadb, il faudra mettre en place un service écoutant le pod mariadb sur le port 3306.
 Avec un ingress et le service lié à glpi, exposez l'application sur Internet. 
 Dans le pod GLPI, changez via une configmap le logo de GLPI. 
