@@ -172,7 +172,7 @@ oc create -f .\cm.yaml
 
 oc apply -f podcm.yaml
 
-##Demo 3 : Mettre en place des variables d'environnement avec une Config map 
+## Demo 3 : Mettre en place des variables d'environnement avec une Config map 
 
 L'appel de la variable d'environnement se fait depuis le pod :
 ```
