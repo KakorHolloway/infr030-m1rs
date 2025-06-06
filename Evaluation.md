@@ -23,7 +23,8 @@ https://hub.docker.com/r/fametec/glpi
 -e MARIADB_USER=glpi \
 -e MARIADB_PASSWORD=glpi \
 -e VERSION="9.5.6" \
--e PLUGINS="all" \
+-e PLUGINS="all"
+
 # Rendu attentu 
 
 Dans un zip, en rendu donnez-moi :
