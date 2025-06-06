@@ -171,3 +171,15 @@ oc create configmap --from-file=canard.png --from-file=index.html canard-website
 oc create -f .\cm.yaml
 
 oc apply -f podcm.yaml
+
+##Demo 3 : Mettre en place des variables d'environnement avec une Config map 
+
+L'appel de la variable d'environnement se fait depuis le pod :
+```
+        - name: demoenv
+          valueFrom:
+            configMapKeyRef:
+              name: env-demo          # The ConfigMap this value comes from.
+              key: demo
+```
+Ce qui laisse entendre que nous avons une configmap nommée env-demo et on récupère la valeur uniquement de la clé demo. 
