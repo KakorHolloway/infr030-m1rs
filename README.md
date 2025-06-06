@@ -192,3 +192,19 @@ Créez un secret qui va contenir un mot de passe pour une base de donnée
 Créez un pod avec pull harbor.kakor.ovh/public/mariadb:latest qui va monter ce secret dans la bonne variable d'environnement. 
 
 Vérifiez que votre pod est bien en running et que le mot de passe fonctionne en vous connectant sur le pod et sur la db via la commande mariadb. 
+
+### Correction 
+
+Création du pod :
+oc run mariabd --image=harbor.kakor.ovh/public/mariadb:latest --dry-run=client -o yaml > exo5/pod.yaml
+
+Création du secret :
+
+oc create secret generic mariadb-secret --from-literal=password=B4teau123!  --dry-ru
+n=client -o yaml > exo5/secret.yaml
+
+oc logs mariadb 
+
+oc rsh mariadb 
+
+mariadb -u root -p
