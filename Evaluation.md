@@ -16,7 +16,7 @@ Dans le pod GLPI, changez via une configmap le logo de GLPI.
 
 L'image GLPI va avoir besoin des éléments suivants en tant que variable d'env :
 https://hub.docker.com/r/fametec/glpi
--e GLPI_LANG=pt_BR \
+-e GLPI_LANG=fr_FR \
 -e MARIADB_HOST=mariadb-glpi \
 -e MARIADB_PORT=3306 \
 -e MARIADB_DATABASE=glpi \
