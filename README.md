@@ -223,3 +223,27 @@ Une fois que le pod créé est en Running, modifiez le deployment pour utiliser 
 Une fois en Runnning mettez l'image harbor.kakor.ovh/public/mysql:15.8 . Puis revenez à la version précédente du deployment sans modifier le fichier yaml.
 
 Tentez de supprimer les pods du deployment, que se passe t-il et pourquoi ? 
+
+### Correction 
+
+oc create deployment mysql-coorection --image=harbor.kakor.ovh/public/mysql:8.4.5 --replicas=1 --dry-run=client -o yaml
+
+```
+oc apply -f deploiment.yaml
+oc apply -f secret.yaml 
+
+autre option 
+
+oc apply -f exo6/ 
+
+oc set image deployment/mysql-coorection mysql=harbor.kakor.ovh/public/mysql:9.3
+oc get pod
+oc get rs
+oc set image deployment/mysql-coorection mysql=harbor.kakor.ovh/public/mysql:15.6
+oc get pod
+oc rollout undo deployment mysql-coorection
+oc get pod
+oc delete pod mysql-coorection-5c759bbdc7-dvs44
+oc get pod
+oc delete deployment mysql-coorection
+```

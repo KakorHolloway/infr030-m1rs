@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mysql-coorection
+  name: mysql-coorection
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-coorection
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mysql-coorection
+    spec:
+      containers:
+      - image: harbor.kakor.ovh/public/mysql:8.4.5
+        name: mysql
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: password
+        resources: {}
