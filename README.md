@@ -189,7 +189,7 @@ https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-envir
 
 Créez un secret qui va contenir un mot de passe pour une base de donnée 
 
-Créez un pod avec pull harbor.kakor.ovh/public/mariadb:latest qui va monter ce secret dans la bonne variable d'environnement. 
+Créez un pod avec harbor.kakor.ovh/public/mariadb:latest qui va monter ce secret dans la bonne variable d'environnement. 
 
 Vérifiez que votre pod est bien en running et que le mot de passe fonctionne en vous connectant sur le pod et sur la db via la commande mariadb. 
 
@@ -208,3 +208,18 @@ oc logs mariadb
 oc rsh mariadb 
 
 mariadb -u root -p
+
+## Exercice 6 
+
+Nettoyez l'existant
+
+Doc Kubernetes:
+https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+Mettez en place un nouveau deployment, celui-ci doit se nommer mysql. Ce deployment doit posséder 1 replicas uniquement et utiliser l'image harbor.kakor.ovh/public/mysql:8.4.5 . Montez sur ce deployment un secret nommé "mysql-password" qui permettra de stocker le mot de passe de la base de donné du deployment via la variable d'environnement MYSQL_ROOT_PASSWORD
+
+Une fois que le pod créé est en Running, modifiez le deployment pour utiliser la version harbor.kakor.ovh/public/mysql:9.3.
+
+Une fois en Runnning mettez l'image harbor.kakor.ovh/public/mysql:15.8 . Puis revenez à la version précédente du deployment sans modifier le fichier yaml.
+
+Tentez de supprimer les pods du deployment, que se passe t-il et pourquoi ? 
